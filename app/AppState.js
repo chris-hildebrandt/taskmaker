@@ -3,7 +3,13 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
-  values = []
+  values = [
+    new Value({
+      // input all the data aliases explicit information for one object this is 
+    })
+  ]
+
+
 }
 
 export const ProxyState = new Proxy(new AppState(), {
