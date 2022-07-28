@@ -1,14 +1,19 @@
+import { Item } from "./Models/Item.js"
+import { List } from "./Models/List.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
-  values = [
-    new Value({
-      // input all the data aliases explicit information for one object this is 
-    })
+  values = []
+  
+  lists = [
+    new List({title: "Groceries", color: "bg-success",})
   ]
 
+  items = [
+    new Item({title: 'Tomatoes', complete: false})
+  ]
 
 }
 

@@ -1,15 +1,15 @@
-// async and await
-// greater > dates are the older dates, future dates would be less than the current or past dates sort from within the draw function using the .sort((a,b) => a.date - b.date)
+import { ProxyState } from "../AppState.js"
+import { List } from "../Models/List.js"
 
+class ListsService{
 
+  createList(newList){
+    ProxyState.lists = [...ProxyState.lists, new List(newList)]
+  }
 
-class ModelsService{
-
+  deleteList(id){
+    ProxyState.lists = ProxyState.lists.filter(l => l.id != id)
+  }
 }
 
-
-
-
-
-
-export const modelsService = new ModelsService()
+export const listsService = new ListsService()

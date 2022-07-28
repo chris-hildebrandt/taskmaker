@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- onsubmit needs to go in the attributes of the parent "form" checked, required, and minlength, min, max etc are helpful attributes. when collecting the "value" for checkboxes use form.alias.checked. also numbers may come in as strings from input boxes so you can parseInt(the entire form.alias.value) to get an integer. console log the object before pushing it to the service to see the values you collected listeners go in the controller constructor listeners watch the ProxyState.on(changes to a "value" which is the array where a class of objects is stored)-->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,10 +27,29 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
-        </div>
+        <form onsubmit="app.listsController.createList()">
+          <input type="text" id="title" name="title" placeholder="List Name">
+          <select name="color" id="color">Select Color
+            <option class="bg-success" value="bg-success">green</option>
+            <option class="bg-warning" value="bg-warning">yellow</option>
+            <option class="bg-danger" value="bg-danger">red</option>
+            <option class="bg-primary" value="bg-primary">blue</option>
+          </select>
+          <button class="btn btn-primary">Create</button>
+        </form>
       </div>
+      <section class="row justify-content-evenly" name="lists" id="lists">
+        <!-- <div class="col-4 card">
+          <div class="row bg-success" name="title" id="title">Title</div>
+          <div class="col">List Items Go Here</div>
+        </div> -->
+      </section>
+      <section id="item">
+        <!-- <h5>
+          <input type="checkbox" id="" name="item" value="item">
+          <label for="item"> Item 1</label><br>
+        </h5> -->
+      </section>
     </div>
   </main>
   <footer class="bg-dark text-light">
