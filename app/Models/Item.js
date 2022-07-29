@@ -1,15 +1,16 @@
 import { generateId } from "../Utils/generateId.js"
 
-
-
 export class Item{
   constructor(data){
+    if(!data.listId){
+      throw new Error("something broke")
+    }
+
     this.id = data.id || generateId()
     this.title = data.title
     this.complete = data.complete
     this.listId = data.listId
   }
-
 
   get Template(){
     return `

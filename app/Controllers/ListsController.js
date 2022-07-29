@@ -9,10 +9,9 @@ function _draw(){
 }
 
 export class ListsController{
-  constructor(){
+  constructor() {
     ProxyState.on("lists", _draw)
     _draw()
-
   }
 
   createList(){
@@ -31,6 +30,10 @@ export class ListsController{
   deleteList(id){
     console.log(id);
     listsService.deleteList(id)
+  }
+
+  toggleCollapse(lisId){
+    listsService.toggleCollapse(listId)
   }
 
 }

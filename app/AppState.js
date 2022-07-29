@@ -7,12 +7,24 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = []
   
+  /** @type {import('./Models/List').List[]} */
+
   lists = [
-    new List({title: "Groceries", color: "bg-success",})
+    new List({
+      id: 15,
+      title: "Groceries",
+      color: "bg-success",
+    }),
   ]
 
+  /** @type {import('./Models/Item').Item[]} */
+
   items = [
-    new Item({title: 'Tomatoes', complete: false})
+    new Item({
+      title: 'Tomatoes',
+      complete: false,
+      listId: 15,
+    }),
   ]
 
 }
